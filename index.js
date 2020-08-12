@@ -12,26 +12,27 @@ console.log('its working');
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
 
-fifaData.forEach((item) => {
-    if(item.year === 2014 && item.Stage === 'Final'){
-        console.log(item["Home Team Name"]);
-        console.log(item["Away Team Name"]);
-        console.log(item["Home Team Goals"]);
-        console.log(item["Away Team Goals"]);
-        if(item["Home Team Goals"] > item["Away Team Goals"]){
-            console.log(`${item["Home Team Name"]} was the winner of the 2014 world cup final. `)
-        } else{
+fifaData.forEach((item) => { //this for loop will iterate throught all values in the data set 
+    if(item.year === 2014 && item.Stage === 'Final'){ //if the year of the current item is = to 2014 and the item has a stage value of final do this
+        console.log(item["Home Team Name"]); //a: console log the home team name
+        console.log(item["Away Team Name"]); //b: console log the away team name
+        console.log(item["Home Team Goals"]); //c: console log the home team goals
+        console.log(item["Away Team Goals"]); //d: console log the way team goals
+        if(item["Home Team Goals"] > item["Away Team Goals"]){ // if the home team goals is greater than the away team goals(if the home team won)
+            console.log(`${item["Home Team Name"]} was the winner of the 2014 world cup final. `) //console log  this
+        } else{ //if the away team won console log this
             console.log(`${item[" Team Name"]} was the winner of the 2014 world cup final. `)
         }
     }
+
 })
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
 function getFinals(data) {
-    let finalsInfo = [];
-    data.forEach((item) => {
-        if(item.Stage === 'Final'){
+    let finalsInfo = []; //declare array for the return item
+    data.forEach((item) => { //for each item in fifaData 
+        if(item.Stage === 'Final'){ //if the fifaData.stage is a
             finalsInfo.push(item);
         }
     })
